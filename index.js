@@ -40,10 +40,30 @@ function oddishOrEvenish(number) {
   return 'Evenish';
 }
 
-function at(arr, index){
-    if (index >= 0) return arr[index]
-     const negativeNumber = arr.length + index;
-    return arr[negativeNumber];
+function at(arr, index) {
+  if (index >= 0) return arr[index];
+  const negativeNumber = arr.length + index;
+  return arr[negativeNumber];
 }
 
-module.exports = { reverseWords, titleCase, oddishOrEvenish, at };
+// function fizzBuzz(number) {
+//   const n = Number(number);
+//   const fizzBuzzArray = Array.from({ length: n }, (_, i) => i + 1).map(number => {if (number % 3 === 0 && number % 5 === 0 ) return "FizzBuzz")}
+//   {if (number % 3 === 0 && number % 5 === 0 ) return "FizzBuzz";)}
+
+//   console.log(fizzBuzzArray);
+// }
+
+function fizzBuzz(number) {
+  const n = Number(number);
+  const fizzBuzzArray = Array.from({ length: n }, (_, i) => i + 1).map(
+    (number) => {
+      if (number % 15 === 0) return 'FizzBuzz';
+      else if (number % 3 === 0) return 'Fizz';
+      else if (number % 5 === 0) return 'Buzz';
+    }
+  );
+  return fizzBuzzArray;
+}
+
+module.exports = { reverseWords, titleCase, oddishOrEvenish, at, fizzBuzz };
