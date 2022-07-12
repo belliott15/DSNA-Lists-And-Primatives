@@ -30,19 +30,6 @@ function titleCase(sentence) {
   // return end.join(' ');
 }
 
-// function oddishOrEvenish(number) {
-//   const numberToString = number
-//     .toString()
-//     .split('')
-//     .map((number) => Number(number));
-//   console.log(numberToString);
-//   let sum = 0;
-//   for (let i = 0; i < numberToString.length; i++) {
-//     const sum = +numberToString[i];
-//     if (numberToString.length === numberToString.length - 1) return sum;
-//   }
-// }
-
 function oddishOrEvenish(number) {
   const numberToString = number
     .toString()
@@ -53,4 +40,10 @@ function oddishOrEvenish(number) {
   return 'Evenish';
 }
 
-module.exports = { reverseWords, titleCase, oddishOrEvenish };
+function at(arr, index){
+    if (index >= 0) return arr[index]
+     const negativeNumber = arr.length + index;
+    return arr[negativeNumber];
+}
+
+module.exports = { reverseWords, titleCase, oddishOrEvenish, at };
