@@ -1,4 +1,4 @@
-const { reverseWords } = require(".");
+const { reverseWords, titleCase } = require(".");
 
 describe("reverseWords", () => {
   it("should reverse the words of a sentence", () => {
@@ -8,6 +8,6 @@ describe("reverseWords", () => {
 
 describe("titleCase", () => {
   it("should change each word to be first letter capitalized and rest lowercase", () => {
-    expect(reverseWords("alchemy ROCKS goLD")).toBe("Alchemy Rocks Gold");
+    expect(titleCase("alchemy ROCKS goLD")).toBe("Alchemy Rocks Gold");
   });
 });

@@ -15,8 +15,18 @@ function reverseWords(sentence) {
     .reverse()
     .join(' ');
 
-  console.log(word);
+//   console.log(word);
   return word;
 }
 
-module.exports = { reverseWords };
+function titleCase(sentence) {
+    return sentence.split(' ')
+    .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+    
+    // const words = sentence.split(' ');
+    // const end = words.map(char => char[0].toUpperCase() + char.slice(1).toLowerCase());
+    // return end.join(' ');
+}
+
+module.exports = { reverseWords, titleCase };
