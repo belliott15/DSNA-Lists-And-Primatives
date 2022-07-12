@@ -18,3 +18,10 @@ describe('oddishOrEvenish', () => {
     expect(oddishOrEvenish('41')).toBe('Oddish');
   });
 });
+
+describe('atFunction', () => {
+  it('should return a specific element from the array given its index', () => {
+    expect(at(['a', 'b', 'c', 'd', 'e'], 2)).toBe('c');
+    expect(at(['a', 'b', 'c', 'd', 'e'], -2)).toBe('d');
+  });
+});
