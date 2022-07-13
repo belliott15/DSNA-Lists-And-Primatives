@@ -1,4 +1,4 @@
-const { reverseWords, titleCase, oddishOrEvenish, at, fizzBuzz } = require('.');
+const { reverseWords, titleCase, oddishOrEvenish, at, fizzBuzz, anagram, uniqueString } = require('.');
 
 describe('reverseWords', () => {
   it('should reverse the words of a sentence', () => {
@@ -29,7 +29,7 @@ describe('atFunction', () => {
 
 describe('fizzBuzz', () => {
   it('should return multiples of 3 as Fizz and multiples of 5 as Buzz and both multiples as FizzBuzz', () => {
-    expect(fizzBuzz('16')).toBe([
+    expect(fizzBuzz('16')).toEqual([
       1,
       2,
       'Fizz',
@@ -47,5 +47,19 @@ describe('fizzBuzz', () => {
       'FizzBuzz',
       16,
     ]);
+  });
+});
+
+describe('anagramFunction', () => {
+  it('should take two words and compare them to see if they have exact same letters', () => {
+    expect(anagram('superintended', 'unpredestined')).toBe(true);
+    expect(anagram('pictorialness', 'documentarily')).toBe(false);
+  });
+});
+
+describe('UniqueString function', () => {
+  it('should loop through an array of strings and find the one that isnt like the others', () => {
+    expect(uniqueString([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])).toBe('BbBb');
+    expect(anagram([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])).toBe('foo');
   });
 });

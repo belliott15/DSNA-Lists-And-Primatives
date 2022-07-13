@@ -36,8 +36,7 @@ function oddishOrEvenish(number) {
     .split('')
     .map((number) => Number(number))
     .reduce((sum, number) => sum + number, 0);
-  if (numberToString % 2 !== 0) return 'Oddish';
-  return 'Evenish';
+  return numberToString % 2 !== 0 ? 'Oddish' : 'Evenish';
 }
 
 function at(arr, index) {
@@ -56,14 +55,28 @@ function at(arr, index) {
 
 function fizzBuzz(number) {
   const n = Number(number);
-  const fizzBuzzArray = Array.from({ length: n }, (_, i) => i + 1).map(
-    (number) => {
-      if (number % 15 === 0) return 'FizzBuzz';
-      else if (number % 3 === 0) return 'Fizz';
-      else if (number % 5 === 0) return 'Buzz';
-    }
-  );
+  const fizzBuzzArray = Array.from({ length: n }, (_, i) => i + 1);
+  for (let i = 1; i < fizzBuzzArray.length; i++){
+    if (i % 3 === 0 && i % 5 === 0) fizzBuzzArray[i-1] = 'FizzBuzz';
+    else if (i % 3 === 0) fizzBuzzArray[i-1] = 'Fizz';
+    else if (i % 5 === 0) fizzBuzzArray[i-1] = 'Buzz';
+  }
+//   console.log(fizzBuzzArray);
   return fizzBuzzArray;
 }
 
-module.exports = { reverseWords, titleCase, oddishOrEvenish, at, fizzBuzz };
+function anagram(firstWord, secondWord){
+    const orderedLetters1 = firstWord.split('').sort().join('');
+    const orderedLetters2 = secondWord.split('').sort().join('');
+    return orderedLetters1 === orderedLetters2 ? true : false;
+}
+
+function uniqueString(strings){
+    const scan = strings.map((words) => [...new Set(words.toLowerCase())].sort().join(''));
+    
+    console.log('scan', scan);
+}
+
+
+
+module.exports = { reverseWords, titleCase, oddishOrEvenish, at, fizzBuzz, anagram, uniqueString };
